@@ -1,2 +1,2 @@
 all:
-	g++ newton.cpp -Wall -O3 -o newton.o
+	g++ newton.cpp -Wall -O3 -o newton

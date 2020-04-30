@@ -171,7 +171,6 @@ int main(int argc, char* argv[]) {
         for (int j=0; j<n; j++) {
             pair<complex<double>, int> p = newton(
                 complex<double>(re[j], im[i]));
-
             out << pixel_value(roots, p) << ",";
         }
         out << "\n";
