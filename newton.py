@@ -103,10 +103,10 @@ def main(argv):
     plt.imshow(pixels)
     plt.ylabel("$Im(z)$")
     plt.xlabel("$Re(z)$")
-    plt.title("$f(z) = z^4 - 1$")
+    plt.title("$f(z) = sin(z)$")
     plt.xticks([])
     plt.yticks([])
-    plt.savefig(path, dpi=3000)
+    plt.savefig(path, dpi=2000)
 
 
 if __name__ == "__main__":

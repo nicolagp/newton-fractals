@@ -1,2 +1,8 @@
 # images folder
 imgs
+
+# object file
+newton
+
+# csv output
+out.csv

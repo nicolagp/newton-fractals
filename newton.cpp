@@ -7,7 +7,7 @@
 
 using namespace std;
 
-#define PI 3.14159265
+#define PI 3.14159265358979323846
 
 complex<double> f(complex<double>);
 complex<double> f_prime(complex<double>);
@@ -49,13 +49,22 @@ complex<double> z) {
     return -1;
 }
 
+// complex<double> f(complex<double> z) {
+//     return pow(z, 4) - 1.0;
+// }
+
+// complex<double> f_prime(complex<double> z) {
+//     return 4.0 * pow(z,3);
+// }
+
 complex<double> f(complex<double> z) {
-    return pow(z, 4) - 1.0;
+    return sin(z);
 }
 
 complex<double> f_prime(complex<double> z) {
-    return 4.0 * pow(z,3);
+    return cos(z);
 }
+
 // complex<double> f(complex<double> z) {
 //     return pow(z, 3) - 1.0;
 // }
@@ -151,21 +160,25 @@ int main(int argc, char* argv[]) {
     }
 
     // number of points
-    vector<double> re = linspace(-2, 2, n);
-    vector<double> im = linspace(-2, 2, n);
+    vector<double> re = linspace(-3*PI/2, 3*PI/2, n);
+    vector<double> im = linspace(-3*PI/2, 3*PI/2, n);
 
     // roots
     vector<complex<double>> roots;
-    roots.push_back(complex<double>(1, 0));
-    roots.push_back(complex<double>(-1, 0));
-    roots.push_back(complex<double>(0, 1));
-    roots.push_back(complex<double>(0, -1));
+    // roots.push_back(complex<double>(1, 0));
+    // roots.push_back(complex<double>(-1, 0));
+    // roots.push_back(complex<double>(0, 1));
+    // roots.push_back(complex<double>(0, -1));
 
     // roots.push_back(complex<double>(1, 0));
     // roots.push_back(complex<double>(-cos(PI/3), sin(PI/3)));
     // roots.push_back(complex<double>(-cos(PI/3), -sin(PI/3)));
 
-    // save img
+    roots.push_back(complex<double>(PI, 0));
+    roots.push_back(complex<double>(0, 0));
+
+
+    // save matrix in csv
     ofstream out("out.csv");
     for (int i=0; i<n; i++) {
         for (int j=0; j<n; j++) {
